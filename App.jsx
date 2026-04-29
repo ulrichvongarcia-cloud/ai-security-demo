@@ -1,53 +1,33 @@
-import React, { useState, useEffect } from 'react';
+// App.jsx
 
-const FinishRunningSystem = () => {
-    const [raceData, setRaceData] = useState([]);
-    const [checkpoints, setCheckpoints] = useState([]);
-    const [completionScore, setCompletionScore] = useState(0);
+import React from 'react';
 
-    useEffect(() => {
-        // Simulate fetching race data and checkpoints
-        const fetchRaceData = async () => {
-            const fetchedRaceData = await simulateFetchRaceData();
-            setRaceData(fetchedRaceData);
-            setCheckpoints(calculateCheckpoints(fetchedRaceData));
-            setCompletionScore(calculateCompletionScore(fetchedRaceData));
-        };
-
-        fetchRaceData();
-    }, []);
-
-    const simulateFetchRaceData = async () => {
-        // Replace this with real data fetching logic
-        return [
-            { id: 1, name: 'Race 1', completed: true },
-            { id: 2, name: 'Race 2', completed: false },
-        ];
-    };
-
-    const calculateCheckpoints = (data) => {
-        // Logic to calculate checkpoints based on race data
-        return data.map(race => ({ raceId: race.id, reached: race.completed }));
-    };
-
-    const calculateCompletionScore = (data) => {
-        // Scoring logic based on completed races
-        const completedCount = data.filter(race => race.completed).length;
-        return completedCount * 10; // Example scoring mechanism
-    };
-
+const App = () => {
     return (
         <div>
-            <h1>Finish Running System</h1>
-            <h2>Completion Score: {completionScore}</h2>
-            <h3>Checkpoints:</h3>
-            <ul>
-                {checkpoints.map(cp => (
-                    <li key={cp.raceId}>Race ID: {cp.raceId}, Reached: {cp.reached ? 'Yes' : 'No'}</li>
-                ))}
-            </ul>
+            <h1>AI-Native Security Architecture Dashboard</h1>
+            <div>
+                <h2>Race Progression</h2>
+                {/* Implement race progression logic */}
+            </div>
+            <div>
+                <h2>Checkpoints</h2>
+                {/* Implement checkpoints logic */}
+            </div>
+            <div>
+                <h2>Completion Scoring</h2>
+                {/* Implement scoring logic */}
+            </div>
+            <div>
+                <h2>Leaderboard</h2>
+                {/* Implement leaderboard logic */}
+            </div>
+            <div>
+                <h2>Threat Vector Challenges</h2>
+                {/* Implement threat vector challenges */}
+            </div>
         </div>
     );
 };
 
-export default FinishRunningSystem;
+export default App;
